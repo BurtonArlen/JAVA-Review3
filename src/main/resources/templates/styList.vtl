@@ -8,21 +8,24 @@
     <div class="nav navbar-inverse navbar-right" id="navstyle">
       <ul class="nav nav-pills">
         <li role="button" class="active"><a href="/">Home</a></li>
+        <li role="button" class="active"><a href="/admin">Admin</a></li>
       </ul>
     </div>
   </div>
 </nav>
 <div id="appo" class="container">
-  <h1>Request an appointment</h1>
+  <h1>Stylists</h1>
   <div class="schedule">
-    #foreach ($stylist in $stylists)
-      <div class="stylist col-lg-4">
-        <p>$stylist.styName()</p>
-        <form class="StylistApp" action="/appointments/stylist/$stylist.styName()">
-          <input id="stylistID" name="stylistId" type="hidden" value="$stylist.getId()">
-          <button class="btn btn-info $stylist.styName()" type="submit" name="appointmentConf">Request Appointment</button>
-        </form>
-      </div>
-    #end
+    <ol>
+      #foreach ($stylist in $stylists)
+      <li><a href="/admin/stylist/$stylist.styName()/$stylist.getId()">$stylist.styName()</a></li>
+      #end
+    <ol>
   </div>
+  <h1>Add new stylist</h1>
+  <form action="/admin" method="post">
+    <label for="title">New Hire Name</label>
+    <input id="name" name="name" type="text">
+    <button type="submit" class="btn btn-success">Hire</button>
+  </form>
 </div>

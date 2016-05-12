@@ -7,13 +7,17 @@
     </div>
     <div class="nav navbar-inverse navbar-right" id="navstyle">
       <ul class="nav nav-pills">
+        <li role="button" class="active"><a href="/">Home</a></li>
+        <li role="button" class="active"><a href="/admin">Admin</a></li>
       </ul>
     </div>
   </div>
 </nav>
 <div id="appo" class="container">
-  <div class="jumbotron">
-    <h2>Thank you for scheduling an appointment with $stylist.styName(), $client.cliName(). We'll see you then.</h2>
-    <a class="btn btn-info" href="/">Home</a>
-  </div>
+  <h1>$stylist.styName()'s Clients</h1>
+  <ol>
+    #foreach($client in $stylist.clients())
+    <li>$client.cliName()</li>
+    #end
+  </ol>
 </div>

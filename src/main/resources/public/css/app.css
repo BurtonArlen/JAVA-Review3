@@ -7,3 +7,7 @@
   border-color: #000;
   border-width: 2px;
 }
+
+.active{
+  padding: 5px;
+}
