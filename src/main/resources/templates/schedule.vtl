@@ -12,13 +12,16 @@
     </div>
   </div>
 </nav>
-<div class="container">
+<div id="appo" class="container">
   <div class="schedule">
-    #foreach ($stylist in $stylist.all())
-      <div class="stylist col-sm-3">
-        <form class="StylistApp" action="/confirm" method="get">
+    #foreach ($stylist in $stylists)
+      <div class="stylist col-lg-4">
+        <form class="StylistApp" action="/schedule/:stylistId/:id" method="post">
+          <label for="userName">userName</label>
+          <input id="userName" name="name" type="text">
           <input id="stylistID" name="stylistID" type="hidden" value="$stylist.getId()">
-          <button class="btn btn-info" type="submit" name="appointmentConf"><h3>Request Appointment with $stylist.styName()</h3></button>
+          <input id="userId" name="id" type="hidden" value="$client.cliId()">
+          <button class="btn btn-info" type="submit" name="appointmentConf">Request Appointment with $stylist.styName()</button>
         </form>
       </div>
     #end

@@ -17,39 +17,16 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/login", (request, response) -> {
+    get("/appointments", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/login.vtl");
+      model.put("stylists", Stylist.all());
+      model.put("template", "templates/schedule.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/appointment", (request, response) -> {
+    post("/schedule/:stylistId/:id", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      Stylist rick = new Stylist("Rick");
-      Stylist morty = new Stylist("Morty");
-      Stylist jerry = new Stylist("Jerry");
-      Stylist beth = new Stylist("Beth");
-      Stylist summer = new Stylist("Summer");
-      Stylist bperson = new Stylist("BirdPerson");
-      Stylist ghead = new Stylist("Gearhead");
-      Stylist mpbh = new Stylist("Mr.PoopyButthole");
-      rick.save();
-      morty.save();
-      jerry.save();
-      beth.save();
-      summer.save();
-      bperson.save();
-      ghead.save();
-      mpbh.save();
-      model.put("template", "templates/appointment.vtl");
-      return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine());
-
-    post("/schedule/user/:id", (request, response) -> {
-      HashMap<String, Object> model = new HashMap<String, Object>();
-      List<Stylist> stylists = Stylist.all();
       Client user = Client.find(Integer.parseInt(request.params("id")));
-      user.styId();
       user.save();
       model.put("template", "templates/appConf.vtl");
       return new ModelAndView(model, layout);

@@ -119,13 +119,6 @@ ALTER TABLE ONLY stylists ALTER COLUMN id SET DEFAULT nextval('stylists_id_seq':
 --
 
 COPY clients (id, name, stylistid) FROM stdin;
-52	Arlen	\N
-53	Arlen	\N
-54	Arlen	\N
-55	Arlen	\N
-56	Arlen	\N
-57	Arlen	\N
-58	Arlen	\N
 \.
 
 
@@ -141,86 +134,14 @@ SELECT pg_catalog.setval('clients_id_seq', 58, true);
 --
 
 COPY stylists (id, name) FROM stdin;
-11	Rick
-12	Morty
-13	Jerry
-14	Beth
-15	Summer
-16	BirdPerson
-17	Gearhead
-18	Mr.PoopyButthole
-19	Rick
-20	Morty
-21	Jerry
-22	Beth
-23	Summer
-24	BirdPerson
-25	Gearhead
-26	Mr.PoopyButthole
-27	Rick
-28	Morty
-29	Jerry
-30	Beth
-31	Summer
-32	BirdPerson
-33	Gearhead
-34	Mr.PoopyButthole
-35	Rick
-36	Morty
-37	Jerry
-38	Beth
-39	Summer
-40	BirdPerson
-41	Gearhead
-42	Mr.PoopyButthole
-43	Rick
-44	Morty
-45	Jerry
-46	Beth
-47	Summer
-48	BirdPerson
-49	Gearhead
-50	Mr.PoopyButthole
-51	Rick
-52	Morty
-53	Jerry
-54	Beth
-55	Summer
-56	BirdPerson
-57	Gearhead
-58	Mr.PoopyButthole
-59	Rick
-60	Morty
-61	Jerry
-62	Beth
-63	Summer
-64	BirdPerson
-65	Gearhead
-66	Mr.PoopyButthole
-67	Rick
-68	Morty
-69	Jerry
-70	Beth
-71	Summer
-72	BirdPerson
-73	Gearhead
-74	Mr.PoopyButthole
-75	Rick
-76	Morty
-77	Jerry
-78	Beth
-79	Summer
-80	BirdPerson
-81	Gearhead
-82	Mr.PoopyButthole
-83	Rick
-84	Morty
-85	Jerry
-86	Beth
-87	Summer
-88	BirdPerson
-89	Gearhead
-90	Mr.PoopyButthole
+107	Rick
+108	Morty
+109	Jerry
+110	Beth
+111	Summer
+112	BirdPerson
+113	Gearhead
+114	Mr.PoopyButthole
 \.
 
 
@@ -228,7 +149,7 @@ COPY stylists (id, name) FROM stdin;
 -- Name: stylists_id_seq; Type: SEQUENCE SET; Schema: public; Owner: arlen
 --
 
-SELECT pg_catalog.setval('stylists_id_seq', 90, true);
+SELECT pg_catalog.setval('stylists_id_seq', 114, true);
 
 
 --
