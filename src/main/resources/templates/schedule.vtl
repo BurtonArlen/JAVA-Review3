@@ -1,0 +1,26 @@
+<nav class="navbar navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header" id="navboard">
+      <a class="navbar-brand" href="/">
+        <img src="/img/hair-ico.png" alt="icon of hairstyle" /><p id="navname">SwankyStyles</p>
+      </a>
+    </div>
+    <div class="nav navbar-inverse navbar-right" id="navstyle">
+      <ul class="nav nav-pills">
+        <li role="button" class="active"><a href="/">Home</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="schedule">
+    #foreach ($stylist in $stylist.all())
+      <div class="stylist col-sm-3">
+        <form class="StylistApp" action="/confirm" method="get">
+          <input id="stylistID" name="stylistID" type="hidden" value="$stylist.getId()">
+          <button class="btn btn-info" type="submit" name="appointmentConf"><h3>Request Appointment with $stylist.styName()</h3></button>
+        </form>
+      </div>
+    #end
+  </div>
+</div>

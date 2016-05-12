@@ -1,0 +1,27 @@
+<nav class="navbar navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header" id="navboard">
+      <a class="navbar-brand" href="/">
+        <img src="/img/hair-ico.png" alt="icon of hairstyle" /><p id="navname">SwankyStyles</p>
+      </a>
+    </div>
+    <div class="nav navbar-inverse navbar-right" id="navstyle">
+      <ul class="nav nav-pills">
+        <li role="button" class="active"><a href="/">Home</a></li>
+        <li role="button" class="active"><a href="/login">Log In</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="schedule">
+    #foreach ($stylist in $stylists)
+      <div class="stylist col-sm-4">
+        <h3>$stylist.styName()</h3>
+        <img src="/img/blankProfile.jpg" alt="profile picture not set" />
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod, augue quis aliquet ultrices, lacus ante volutpat quam, a eleifend erat enim vel sem.</p>
+        <a class="btn btn-info" href="/login">Make an Appointment with $stylist.styName()</a>
+      </div>
+    #end
+  </div>
+</div>

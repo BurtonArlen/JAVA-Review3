@@ -1,0 +1,27 @@
+<nav class="navbar navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header" id="navboard">
+      <a class="navbar-brand" href="/">
+        <img src="/img/hair-ico.png" alt="icon of hairstyle" /><p id="navname">SwankyStyles</p>
+      </a>
+    </div>
+    <div class="nav navbar-inverse navbar-right" id="navstyle">
+      <ul class="nav nav-pills">
+        <li role="button" class="active"><a href="/">Home</a></li>
+        <li role="button" class="active"><a href="/staff">Our Stylists</a></li>
+        <li role="button" class="active"><a href="/schedule">Appointments</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="jumbotron">
+    <form class="login" action="/schedule/user/:name" method="post">
+      <label for="name">Enter your username</label>
+      <input id="name" name="name" placeholder="Username" type="text">
+      <label for="password">Enter your password</label>
+      <input id="password" name="password" placeholder="Password" type="text">
+      <button class="btn btn-success" type="submit" name="submitLogin">Sign Up</button>
+    </form>
+  </div>
+</div>
