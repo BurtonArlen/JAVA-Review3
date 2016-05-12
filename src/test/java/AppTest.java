@@ -20,53 +20,36 @@ public class AppTest extends FluentTest {
   @Test
   public void rootTest() {
     goTo("http://localhost:4567/");
-    assertThat(pageSource()).contains("Welcome to SwankyStyles");
+    assertThat(pageSource()).contains("Welcome to MultiVersal Cuts");
+  }
+  @Test
+  public void rootAdminTest() {
+    goTo("http://localhost:4567/admin");
+    assertThat(pageSource()).contains("Stylists");
   }
 
-  // @Test
-  // public void signupTest() {
-  //   goTo("http://localhost:4567/");
-  //   click("a", withText("Sign Up"));
-  //   fill("#name").with("Squanchy");
-  //   fill("#password1").with("squanch");
-  //   fill("#password2").with("squanch");
-  //   submit(".btn");
-  //   assertThat(pageSource()).contains("SwankyStyles");
-  // }
-  //
-  // @Test
-  // public void stylistsDisplayedTest() {
-  //   goTo("http://localhost:4567/");
-  //   click("a", withText("View our Staff"));
-  //   assertThat(pageSource()).contains("SwankyStyles");
-  // }
-  //
-  // @Test
-  // public void multipleTasksAreDisplayedTest() {
-  //   goTo("http://localhost:4567/tasks/new");
-  //   fill("#description").with("Mow the lawn");
-  //   submit(".btn");
-  //   goTo("http://localhost:4567/tasks/new");
-  //   fill("#description").with("Buy groceries");
-  //   submit(".btn");
-  //   click("a", withText("View tasks"));
-  //   assertThat(pageSource()).contains("Mow the lawn");
-  //   assertThat(pageSource()).contains("Buy groceries");
-  // }
-  //
-  // @Test
-  // public void taskShowPageDisplaysDescription() {
-  //   goTo("http://localhost:4567/tasks/new");
-  //   fill("#description").with("Do the dishes");
-  //   submit(".btn");
-  //   click("a", withText("View tasks"));
-  //   click("a", withText("Do the dishes"));
-  //   assertThat(pageSource()).contains("Do the dishes");
-  // }
-  //
-  // @Test
-  // public void taskNotFoundMessageShown() {
-  //   goTo("http://localhost:4567/tasks/999");
-  //   assertThat(pageSource()).contains("Task not found");
-  // }
+  @Test
+  public void appointmnetTest() {
+    goTo("http://localhost:4567/");
+    click("#appoint", withText("make an appointment"));
+    click(".Rick", withText("Request Appointment"));
+    fill("#userName").with("Squanchy");
+    submit("#appConf");
+    assertThat(pageSource()).contains("Thank you for scheduling an appointment with Rick, Squanchy. We'll see you then.");
+  }
+
+  @Test
+  public void stylistsDisplayedTest() {
+    goTo("http://localhost:4567/admin");
+    assertThat(pageSource()).contains("Rick");
+    assertThat(pageSource()).contains("Jan Michael Vincent");
+  }
+
+  @Test
+  public void clientsDisplayedTest() {
+    goTo("http://localhost:4567/admin");
+    click("a#Rick", withText("Rick"));
+    assertThat(pageSource()).contains("Squanchy");
+  }
+
 }

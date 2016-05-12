@@ -18,7 +18,7 @@
   <div class="schedule">
     <ol>
       #foreach ($stylist in $stylists)
-      <li><a href="/admin/stylist/$stylist.styName()/$stylist.getId()">$stylist.styName()</a></li>
+      <li><a id="$stylist.styName()" href="/admin/stylist/$stylist.styName()/$stylist.getId()">$stylist.styName()</a></li>
       #end
     <ol>
   </div>
